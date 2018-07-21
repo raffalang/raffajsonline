@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>RaffaLang</title>
+</head>
+<body>
+    <center>
+    <hr>
+    <textarea id="text" style="resize:none; width:500px; height:500px;">Code</textarea>
+        <button id="Build">Build</button>
+    </center>
+</body>
+<script>
+    $("#Build").click(()=>{
+        code = $("#text").val();
+        window.location.href = "/code/" + $("#text").val();
+    });
+</script>
+</html>
