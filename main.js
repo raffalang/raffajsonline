@@ -209,6 +209,25 @@ for(i=0;i<code.length;i++){
         language.vars_int.values[pointer] = (parseInt(language.vars_int.values[pointer]) / parseInt(set));
         //console.log(language.vars_int);*/
     }
+        
+      if(code[i].split('&')[0] == "SUBO NAS COISAS PORQUE EU POSSO "){
+        value = code[i].split('&')[1].split(' ')[0];
+        set = code[i].split('&')[1].split(' ')[1].substr(0,code[i].split('&')[1].split(' ')[1].length);
+        //console.log("value:" + value);
+        //console.log("set" + set);
+        pointer = 0;
+        for(x=0;x<language.vars_int.names.length;x++){
+            if(value == language.vars_int.names[x]){
+                pointer = x;
+            }
+        }
+        
+        
+        //console.log(language.vars_int.values[pointer]);
+       // console.log(pointer);
+        language.vars_int.values[pointer] = (parseInt(language.vars_int.values[pointer]) ^ parseInt(set));
+        //console.log(language.vars_int);*/
+    }
 
     if(code[i].split('&')[0] == "NUMERO ALEATORIO "){
         value = code[i].split('&')[1].split(' ')[0];
